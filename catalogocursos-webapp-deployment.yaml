@@ -1,0 +1,22 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: catalogocursos-webapp-deployment
+spec:
+  selector:
+    matchLabels:
+      app: catalogocursos-webapp-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: catalogocursos-webapp-service
+    spec:
+      containers:
+      - image: test-sample:latest
+        name: test-sample
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8080
+          name: test-sample
