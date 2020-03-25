@@ -1,7 +1,6 @@
 package com.janglada.demo.repository;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,13 +11,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "TEST")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TestEntity {
+public class TestEntity implements Serializable {
 
     @Id
     @GenericGenerator(name = "uuid", strategy = "uuid2")
