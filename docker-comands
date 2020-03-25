@@ -1,1 +1,5 @@
-$ docker build -t simple_jar_webapp .
+$ docker build -t test-sample .
+
+
+# run in kubernetes cluster
+ eval $(minikube docker-env)
