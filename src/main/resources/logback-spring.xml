@@ -33,14 +33,14 @@
 	</appender>
 
 	<!-- Appender by environment -->
-	<springProfile name="DEV | TOR | CER | PRO">
+	<springProfile name="DOCKER | KUB">
 		<root>
 			<appender-ref ref="FILE"/>
 			<appender-ref ref="CONSOLE"/>
 		</root>
 	</springProfile>
 
-	<springProfile name="!(DEV | TOR | CER | PRO)">
+	<springProfile name="!(DOCKER | KUB)">
 		<root>
 			<appender-ref ref="CONSOLE"/>
 		</root>
