@@ -28,6 +28,7 @@ pipeline {
         }
         stage('Run') {
             steps {
+                sh 'pwd'
                 sh 'java -jar ./target/test-sample.jar'
             }
         }
