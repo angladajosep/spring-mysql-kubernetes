@@ -16,10 +16,21 @@ pipeline {
                 sh 'mvn test'
             }
         }
-        stage('Deliver') {
+/*         stage('Deliver') {
             steps {
                 sh './jenkins/scripts/deliver.sh'
             }
+        } */
+        stage('Deliver2'){
+            steps {
+                sh 'mvn jar:jar install:install help:evaluate -Dexpression=project.name'
+            }
         }
+        stage('Run') {
+            steps {
+                sh 'java -jar target/test-sample.jar'
+            }
+        }
+
     }
 }
