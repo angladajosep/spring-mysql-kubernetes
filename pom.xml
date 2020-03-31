@@ -20,11 +20,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <hibernate.jpa.api.version>1.0.0.Final</hibernate.jpa.api.version>
-
+        <start-class>com.janglada.demo.DemoApplication</start-class>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -104,9 +103,9 @@
     </dependencies>
 
 
-    <build>
+ <!--   <build>
 
-        <!-- war name -->
+        &lt;!&ndash; war name &ndash;&gt;
         <finalName>test-sample</finalName>
 
         <plugins>
@@ -117,5 +116,19 @@
 
         </plugins>
 
+    </build>-->
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.janglada.demo.DemoApplication</mainClass>
+                    <layout>ZIP</layout>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
+
 </project>
