@@ -11,16 +11,14 @@ kubectl create -f catalogocursos-mysql-deployment.yaml
 kubectl create -f redis-master-svc.yaml
 kubectl create -f redis-master-deployment.yaml
 
+kubectl create -f catalogocursos-webapp-svc.yaml
+kubectl create -f catalogocursos-webapp-deployment.yaml
 
 ### COMANDS ###
 
 kubectl get pods 
 minikube service catalogocursos-mysql-service --url
 
-
-1
-	
-n 
 
 ### URL ###
 http://192.168.99.100:31810/test-sample/api/test
